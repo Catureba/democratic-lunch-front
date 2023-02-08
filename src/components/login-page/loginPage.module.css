@@ -1,0 +1,31 @@
+.loginPageConteiner{
+    background-color: #FFFFFF;
+    width: 100vw;
+}
+.box{
+    display: table;
+    width: 80vw;
+    margin: 0 auto;
+}
+.boxLeft, .boxRight{
+    display: table-cell;
+    width: 40vw;
+    height: 60vh;
+    text-align: center;
+}
+.formBox{
+    width: 240px;
+    height: 210px;
+    background-color: #D9D9D9;
+    padding: 50px;
+}
+input{
+    display: inline-block;
+    width: 90%;
+    height: 25px;
+}
+.line{
+    height: 1px;
+    width: 95%;
+    background-color: black;
+}
