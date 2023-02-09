@@ -1,5 +1,5 @@
 
-import styles from './loginPage.module.css'
+import styles from './LoginPage.module.css'
 
 function LoginPage() {
     return (
