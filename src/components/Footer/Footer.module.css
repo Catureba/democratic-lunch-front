@@ -1,0 +1,29 @@
+.footer {
+    height: 180px;
+    width: 100%;
+    background: #1A323E;
+    /* bottom: 0;
+    position: fixed; */
+}
+
+footer div {
+    
+}
+
+h2,
+h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #EB3258;
+}
+
+span {
+    color: #6F6565;
+}
