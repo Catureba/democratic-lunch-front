@@ -1,5 +1,6 @@
 
 import styles from './LoginPage.module.css'
+import logo from '../../assets/democratic-lunch-tela-login.jpg'
 
 function LoginPage() {
     return (
@@ -8,7 +9,7 @@ function LoginPage() {
                 <div className={styles.boxLeft}>
                     <div className={styles.boxLeftIntern}>
                         <h1>Democratic Lunch</h1>
-                        <img src="./democratic-lunch-tela-login.jpg" alt="" />
+                        <img src={logo} alt="" />
                     </div>
 
                 </div>
