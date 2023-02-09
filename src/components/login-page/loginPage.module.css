@@ -77,8 +77,30 @@ form {
     padding-bottom: 50px;
     margin-bottom: 25px;
 }
-.boxLeftIntern h1{
+
+.boxLeftIntern h1 {
     font-family: 'Itim', cursive;
     font-size: 36px;
     font-weight: 500;
+}
+
+@media (max-width: 600px) {
+
+    .boxLeft,
+    .boxRight {
+        display: block;
+        width: 95vw;
+        text-align: center;
+    }
+    img{
+        width: 90vw;
+    }
+    .formBox {
+        width: 90vw;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    input{
+        width: 90%;
+    }
 }
