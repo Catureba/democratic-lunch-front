@@ -1,0 +1,18 @@
+.container {
+  position: fixed;
+  width: 40%;
+  height: 60px;
+  background-color: #62eb32;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Itim", cursive;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: center;
+}
