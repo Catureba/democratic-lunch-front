@@ -1,0 +1,29 @@
+.footer {
+    height: 180px;
+    width: 100%;
+    background: #1A323E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+h2,
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Itim', cursive;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #EB3258;
+}
+
+span {
+    color: #6F6565;
+}
