@@ -33,7 +33,7 @@ export default function SignUp() {
   }
 
   return (
-    <div className={styles.loginPageConteiner}>
+    <div className={styles.singUpConteiner}>
       <div className={styles.box}>
         <div className={styles.boxLeft}>
           <div className={styles.boxLeftIntern}>
