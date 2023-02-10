@@ -1,7 +1,7 @@
 .loginPageConteiner {
-  background-color: #ffffff;
-  width: 100vw;
-  padding-top: 180px;
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 180px 0 100px;
 }
 
 .box {
@@ -17,7 +17,11 @@
   height: 60vh;
   text-align: center;
 }
-
+.boxLeftIntern h1 {
+    font-family: 'Itim', cursive;
+    font-size: 36px;
+    font-weight: 500;
+}
 .formBox {
   width: 660px;
   height: 600px;
@@ -81,28 +85,36 @@ form button {
   margin-bottom: 25px;
 }
 
-.boxLeftIntern h1 {
-  font-family: "Itim", cursive;
-  font-size: 36px;
-  font-weight: 500;
-}
 
 @media (max-width: 600px) {
-  .boxLeft,
-  .boxRight {
-    display: block;
-    width: 95vw;
-    text-align: center;
-  }
-  img {
-    width: 90vw;
-  }
-  .formBox {
-    width: 90vw;
-    margin: 0 auto;
-    padding: 0px;
-  }
-  input {
-    width: 90%;
-  }
+
+    .box{
+        display: block;
+        width: 100%;
+    }
+    .boxLeft,
+    .boxRight {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+    }
+    img{
+        width: 90%;
+    }
+    .formBox {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        padding: 0px 0 30px;
+    }
+    input{
+        width: 90%;
+    }
+    button{
+        width: 90%;
+    }
+    .loginPageConteiner {
+        padding: 180px 0 85px;
+    }
 }
+
