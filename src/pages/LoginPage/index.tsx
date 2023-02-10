@@ -16,7 +16,7 @@ function LoginPage() {
         </div>
         <div className={styles.boxRight}>
           <div className={styles.formBox}>
-            <form action="">
+            <form className={styles.form} action="">
               <input
                 placeholder="Email"
                 type="email"
