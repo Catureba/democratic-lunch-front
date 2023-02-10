@@ -7,13 +7,17 @@
 }
 
 footer div {
-    
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 h2,
 h3 {
     font-size: 20px;
     text-align: center;
+    font-family: 'Itim', cursive;
+    line-height: 1.6;
 }
 
 h2 {

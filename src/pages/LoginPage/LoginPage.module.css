@@ -1,7 +1,7 @@
 .loginPageConteiner {
     background-color: #FFFFFF;
-    width: 100vw;
-    padding-top: 180px;
+    width: 100%;
+    padding: 180px 0 100px;
 }
 
 .box {
@@ -104,5 +104,8 @@ form {
     }
     input{
         width: 90%;
+    }
+    .loginPageConteiner {
+        padding: 180px 0 230px;
     }
 }
