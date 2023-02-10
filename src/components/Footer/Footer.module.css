@@ -2,14 +2,10 @@
     height: 180px;
     width: 100%;
     background: #1A323E;
-    /* bottom: 0;
-    position: fixed; */
-}
-
-footer div {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 h2,
