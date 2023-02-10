@@ -1,7 +1,7 @@
 .loginPageConteiner {
-    background-color: #FFFFFF;
-    width: 100%;
-    padding: 180px 0 100px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 180px 0 100px;
 }
 
 .box {
@@ -18,9 +18,9 @@
   text-align: center;
 }
 .boxLeftIntern h1 {
-    font-family: 'Itim', cursive;
-    font-size: 36px;
-    font-weight: 500;
+  font-family: "Itim", cursive;
+  font-size: 36px;
+  font-weight: 500;
 }
 .formBox {
   width: 660px;
@@ -59,6 +59,12 @@ input {
   background-color: black;
 }
 
+.errorMessage {
+  color: red;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
 button {
   display: block;
   font-size: 24px;
@@ -85,36 +91,33 @@ form button {
   margin-bottom: 25px;
 }
 
-
 @media (max-width: 600px) {
-
-    .box{
-        display: block;
-        width: 100%;
-    }
-    .boxLeft,
-    .boxRight {
-        display: block;
-        width: 95%;
-        margin: 0 auto;
-    }
-    img{
-        width: 90%;
-    }
-    .formBox {
-        width: 100%;
-        margin: 0 auto;
-        height: auto;
-        padding: 0px 0 30px;
-    }
-    input{
-        width: 90%;
-    }
-    button{
-        width: 90%;
-    }
-    .loginPageConteiner {
-        padding: 180px 0 85px;
-    }
+  .box {
+    display: block;
+    width: 100%;
+  }
+  .boxLeft,
+  .boxRight {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+  }
+  img {
+    width: 90%;
+  }
+  .formBox {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    padding: 0px 0 30px;
+  }
+  input {
+    width: 90%;
+  }
+  button {
+    width: 90%;
+  }
+  .loginPageConteiner {
+    padding: 180px 0 85px;
+  }
 }
-
