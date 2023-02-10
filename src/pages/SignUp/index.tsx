@@ -52,7 +52,7 @@ export default function SignUp() {
               />
               <input
                 required
-                placeholder="E-mail"
+                placeholder="Email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 type="email"
