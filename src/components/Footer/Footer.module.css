@@ -1,5 +1,5 @@
 .footer {
-    height: 180px;
+    height: 10vh;
     width: 100%;
     background: #1A323E;
     display: flex;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-h2,
+.footer h2,
 h3 {
     font-size: 20px;
     text-align: center;
@@ -16,14 +16,14 @@ h3 {
     line-height: 1.6;
 }
 
-h2 {
+.footer h2 {
     color: #FFFFFF;
 }
 
-h3 {
+.footer h3 {
     color: #EB3258;
 }
 
-span {
+.footer span {
     color: #6F6565;
 }

@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    
+    border-bottom: 1px solid black;
+}
+
+.box {
+    height: 70px;
+    padding: 50px 50px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img {
+    width: 90px;
+}
+
+.header ul, .header .logo{
+    display: flex;
+    align-items: center;
+}
+
+.header li, .header h2{
+    display: inline-block;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    list-style-type: none;
+    padding-left: 20px;
+
+}
+@media (max-width: 600px) {
+    .header .logo{
+        display: block;
+    }
+    .logo h2{
+        display: none;
+    }
+}
