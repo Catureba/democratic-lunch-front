@@ -6,7 +6,6 @@ function Layout(): JSX.Element {
   return (
     <>
       <Outlet />
-      <Footer />
     </>
   );
 }
