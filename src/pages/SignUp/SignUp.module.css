@@ -1,7 +1,9 @@
 .singUpConteiner {
   background-color: #ffffff;
+
   width: 100%;
   padding: 150px 0 100px;
+
 }
 
 .box {
@@ -45,6 +47,7 @@
   padding-left: 20px;
 }
 
+
 .inputBox1 {
   margin-top: 120px;
 }
@@ -57,6 +60,7 @@
   width: 100%;
   background-color: #eb3258;
   color: #000;
+
   display: block;
   font-size: 24px;
   margin: 0 auto;
@@ -76,6 +80,7 @@
 }
 
 .errorMessage {
+  margin-top: 20px;
   color: red;
   font-size: 20px;
 }
