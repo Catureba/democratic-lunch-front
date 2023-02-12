@@ -7,20 +7,20 @@
 }
 
 .homeBox {
-    display: table;
-    width: 90%;
+    display: flex;
+    max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    
 }
 
 .homeBox1,
 .homeBox2,
 .homeBox3 {
-
-    display: table-cell;
-    height: 550px;
-    background-color: white;
+    max-width: 50%;
+    flex: 1 1 350px;
+    height: auto;
     text-align: center;
-    position: relative;
 }
 
 .homeBox1 button,
@@ -36,8 +36,6 @@
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
-    position: absolute;
-    bottom: 0;
     margin: 0 auto;
 }
 
@@ -46,31 +44,10 @@
 }
 
 @media (max-width: 600px) {
-    .homeBox {
-        display: block;
-        width: 100%;
-    }
 
     .homeBox1,
     .homeBox2,
     .homeBox3 {
-        width: 95%;
-        display: block;
-        height: auto;
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
-        padding: 50px 0 30px;
-    }
-
-    .homeBox1 button,
-    .homeBox2 button,
-    .homeBox3 button {
-        width: 100%;
-        position: relative;
-        bottom: 0;
-    }
-    .homeBox img{
-        width: 60%;
+        max-width: 100%;
     }
 }
