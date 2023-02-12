@@ -2,6 +2,7 @@
   background-color: #ffffff;
   width: 100vw;
   padding-top: 180px;
+  margin-bottom: 30px;
 }
 
 .box {
@@ -45,10 +46,6 @@ input {
   padding-left: 20px;
 }
 
-.inputBox1 {
-  margin-top: 120px;
-}
-
 button {
   display: block;
   font-size: 24px;
@@ -76,6 +73,7 @@ form button {
 }
 
 .errorMessage {
+  margin-top: 20px;
   color: red;
   font-size: 20px;
 }

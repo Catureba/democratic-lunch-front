@@ -1,21 +1,22 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "../pages/Layout";
 import LoginPage from "../pages/LoginPage";
 import SignUp from "../pages/SignUp";
 
-export interface RoutersProps {}
-
-export const Routers: React.FC<RoutersProps> = (): JSX.Element => {
+function Routers(): JSX.Element {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/cadastrar" element={<SignUp />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<LoginPage />} />
+            <Route path="/cadastrar" element={<SignUp />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
-};
+}
 
 export default Routers;
