@@ -27,7 +27,7 @@ export default function SignUp() {
         try {
           await postUser(cardBody);
           setSuccess(true);
-          // redirecionar usuário
+          navigate("/home");
         } catch (error: any) {
           setErrorMessage("Ops, ocorreu um erro ao realizar seu cadastro.");
         }
