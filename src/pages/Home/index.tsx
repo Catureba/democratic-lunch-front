@@ -7,14 +7,27 @@ import { useEffect, useState } from "react";
 function Home() {
 
   const [posts, setPosts] = useState([]);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState({
+    name: "Aguardando...",
+    site: "",
+    description: "Aguardando",
+    cep: 0,
+    street: "",
+    neighborhood: "",
+    city: "",
+    uf: "",
+    votes: 0,
+  });
+  var indexResult = -1
 
   const getPosts = async () => {
     try {
       const response = await axios.get("http://localhost:8080/restaurant/list")
       const data = response.data
       setPosts(data)
-      buscarResultado(data)
+      indexResult = buscarResultado(data)
+      setResult(data[indexResult])
+
     } catch (error) {
       console.log(error)
     }
@@ -29,31 +42,11 @@ function Home() {
         resultado = index
       }
     })
-    setResult(data[resultado])
-    console.table(result)
-    console.table(data[resultado])
-    //console.table(resultadoTeste)
+    return resultado
   }
-
   useEffect(() => {
     getPosts()
   }, [])
-
-
-
-  let resultadoTeste = [{
-    nome: "Barraca da maria",
-    site: "mariabarrraqueira.com.br",
-    description: "não é o lugar mais calmo, mas a comida é boa",
-    cep: 40285820,
-    street: "Rua Jardim Santo Antônio",
-    neighborhood: "Brotas",
-    city: "Salvador",
-    uf: "BA"
-  }]
-
-
-
   function votar(voto: any) {
     alert("Você votou no restaurante: " + voto.nome)
   }
@@ -64,18 +57,16 @@ function Home() {
       <div className={styles.homeConteiner}>
 
         <section className={styles.resultBox}>
-          {resultadoTeste.map((element: any) => (
             <div className={styles.vencedor}>
-              <h1>Vencedor do dia: <span>{element.name}</span></h1>
-              <h2>Site: <span>{element.site}</span></h2>
-              <h2>Descrição: <span>{element.description}</span></h2>
-              <h2>Rua: <span>{element.street}</span></h2>
-              <h2>Bairro: <span>{element.neighborhood}</span></h2>
-              <h2>Cidade: <span>{element.city}</span></h2>
-              <h2>Estado: <span>{element.uf}</span></h2>
-              <h2>Cep: <span>{element.cep}</span></h2>
+              <h1>Restaurante mais votado com {result.votes} até o momento: <span>{result.name}</span></h1>
+              <h2>Site: <span>{result.site}</span></h2>
+              <h2>Descrição: <span>{result.description}</span></h2>
+              <h2>Rua: <span>{result.street}</span></h2>
+              <h2>Bairro: <span>{result.neighborhood}</span></h2>
+              <h2>Cidade: <span>{result.city}</span></h2>
+              <h2>Estado: <span>{result.uf}</span></h2>
+              <h2>Cep: <span>{result.cep}</span></h2>
             </div>
-          ))}
         </section>
 
 
