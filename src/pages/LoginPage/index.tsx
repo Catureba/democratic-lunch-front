@@ -19,8 +19,7 @@ function LoginPage() {
     };
     try {
       await login(cardBody);
-      // redirecinar o usuario
-      console.log("Login ok");
+      navigate("/home");
     } catch (error: any) {
       if (error.response?.status === 403) {
         setErrorMessage("E-mail ou senha incorretos!");
