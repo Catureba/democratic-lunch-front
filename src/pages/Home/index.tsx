@@ -2,7 +2,7 @@ import Header from "../../components/Header";
 import styles from "./Home.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { postRestaurants } from "../../services/restaurants";
+import { postRestaurants, putRestaurants } from "../../services/restaurants";
 
 interface ViacepInterface {
   data: {
@@ -74,8 +74,25 @@ function Home() {
     },
   ];
 
-  function votar(voto: any) {
-    alert("Você votou no restaurante: " + voto.nome);
+  async function votar(voto: any) {
+    const cardBody = {
+      id: voto.id,
+      name: voto.name,
+      site: voto.site,
+      description: voto.description,
+      cep: voto.cep,
+      street: voto.street,
+      neighborhood: voto.neighborhood,
+      city: voto.city,
+      uf: voto.uf,
+      votes: voto.votes + 1,
+    };
+    try {
+      await putRestaurants(cardBody);
+      alert("Você votou no restaurante: " + voto.name);
+    } catch (error) {
+      alert("Não foi possível computar o voto");
+    }
   }
 
   async function handleSubmit(event: React.FormEvent) {
