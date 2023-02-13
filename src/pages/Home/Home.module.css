@@ -2,30 +2,10 @@
     width: 100%;
     padding: 50px 0;
 }
-.homeBox img{
-    width: 80%;
-}
 
-.homeBox {
-    display: table;
-    width: 90%;
-    margin: 0 auto;
-}
+.homeConteiner button {
 
-.homeBox1,
-.homeBox2,
-.homeBox3 {
 
-    display: table-cell;
-    height: 550px;
-    background-color: white;
-    text-align: center;
-    position: relative;
-}
-
-.homeBox1 button,
-.homeBox2 button,
-.homeBox3 button {
     display: block;
     font-size: 24px;
     width: 90%;
@@ -36,41 +16,135 @@
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
-    position: absolute;
-    bottom: 0;
+    margin: 40px auto 0;
+
+}
+.vencedor {
+    flex: 1 1 250px;
+    max-width: 350px;
+    color: white;
+    background-color: #2C424D;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+    border: 5px dashed #EB3258;
+    width: 80%;
+}
+
+.vencedor>h1 {
+    
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.vencedor>h1>span{
+    display: block;
+    color: #EB3258;
+}
+
+.vencedor>h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 15px 0;
+    color: #FFF;
+}
+
+.vencedor>h2>span {
+    font-size: 18px;
+    display: block;
+    color: #EB3258;
+}
+
+/* ################################### */
+
+
+
+
+.listBox {
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.restaurantes {
+    flex: 1 1 250px;
+    max-width: 350px;
+    color: white;
+    background-color: #2C424D;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.restaurantes>h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.restaurantes>h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #FFF;
+}
+
+.restaurantes>h2>span {
+    font-size: 18px;
+    color: #EB3258;
+}
+
+/* ####################################################### */
+
+.postBox {
+    background-color: #2C424D;
+    width: 100%;
+    padding: 50px 0;
+}
+.postBox > div{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.postBox>form {
+    background-color: #EB3258;
+    width: 400px;
+    padding: 70px 50px 35px;
+    border-radius: 5px;
     margin: 0 auto;
 }
 
-.homeBox2 button {
-    background-color: #2c424d;
+.postBox>form>input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 24px;
+    color: #897f7f;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
-@media (max-width: 600px) {
-    .homeBox {
-        display: block;
-        width: 100%;
-    }
+.postBox button {
+    background-color: #2C424D;
+}
 
-    .homeBox1,
-    .homeBox2,
-    .homeBox3 {
+
+@media (max-width: 600px) {
+    .postBox>form {
         width: 95%;
-        display: block;
-        height: auto;
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
         padding: 50px 0 30px;
     }
-
-    .homeBox1 button,
-    .homeBox2 button,
-    .homeBox3 button {
-        width: 100%;
-        position: relative;
-        bottom: 0;
-    }
-    .homeBox img{
-        width: 60%;
+    .postBox > form > input{
+        width: 90%;
     }
 }
