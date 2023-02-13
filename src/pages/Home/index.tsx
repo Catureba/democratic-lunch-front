@@ -1,55 +1,60 @@
 import Header from "../../components/Header";
 import styles from "./Home.module.css";
-import imageDefault from '../../assets/image-dafult.png'
 import axios from "axios";
 import { get } from "http";
+import { useEffect, useState } from "react";
 
 function Home() {
 
-  let resultado = [{
+  const [posts, setPosts] = useState([]);
+  const [result, setResult] = useState([]);
+
+  const getPosts = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/restaurant/list")
+      const data = response.data
+      setPosts(data)
+      buscarResultado(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  function buscarResultado(data: any) {
+    let resultado = -1
+    let maiorNumeroDeVotos = -1
+    data.map((element: any, index: number) => {
+      if (element.votes > maiorNumeroDeVotos) {
+        maiorNumeroDeVotos = element.votes
+        resultado = index
+      }
+    })
+    setResult(data[resultado])
+    console.table(result)
+    console.table(data[resultado])
+    //console.table(resultadoTeste)
+  }
+
+  useEffect(() => {
+    getPosts()
+  }, [])
+
+
+
+  let resultadoTeste = [{
     nome: "Barraca da maria",
     site: "mariabarrraqueira.com.br",
-    descricao: "não é o lugar mais calmo, mas a comida é boa",
+    description: "não é o lugar mais calmo, mas a comida é boa",
     cep: 40285820,
-    rua: "Rua Jardim Santo Antônio",
-    bairro: "Brotas",
-    cidade: "Salvador",
-    estado: "BA"
+    street: "Rua Jardim Santo Antônio",
+    neighborhood: "Brotas",
+    city: "Salvador",
+    uf: "BA"
   }]
 
-  const restaurantes = [{
-    nome: "Barraca da maria",
-    site: "mariabarrraqueira.com.br",
-    descricao: "não é o lugar mais calmo, mas a comida é boa",
-    cep: 40285820,
-    rua: "Rua Jardim Santo Antônio",
-    bairro: "Brotas",
-    cidade: "Salvador",
-    estado: "BA",
-  },
-  {
-    nome: "Hotdog da joana",
-    site: "joanacachorrohot.com.br",
-    descricao: "sinceramente eu nem sei, só vi no insta e indiquei",
-    cep: 40285820,
-    rua: "Rua Jardim Santo Antônio",
-    bairro: "Brotas",
-    cidade: "Salvador",
-    estado: "BA",
-  },
-  {
-    nome: "Restaurante do sergio",
-    site: "sergiorestaurante.com.br",
-    descricao: "A comida é boa",
-    cep: 40285820,
-    rua: "Rua Jardim Santo Antônio",
-    bairro: "Brotas",
-    cidade: "Salvador",
-    estado: "BA",
-  }]
+
 
   function votar(voto: any) {
-    console.log(voto)
     alert("Você votou no restaurante: " + voto.nome)
   }
 
@@ -59,15 +64,15 @@ function Home() {
       <div className={styles.homeConteiner}>
 
         <section className={styles.resultBox}>
-          {resultado.map((element) => (
+          {resultadoTeste.map((element: any) => (
             <div className={styles.vencedor}>
-              <h1>Vencedor do dia: <span>{element.nome}</span></h1>
+              <h1>Vencedor do dia: <span>{element.name}</span></h1>
               <h2>Site: <span>{element.site}</span></h2>
-              <h2>Descrição: <span>{element.descricao}</span></h2>
-              <h2>Rua: <span>{element.rua}</span></h2>
-              <h2>Bairro: <span>{element.bairro}</span></h2>
-              <h2>Cidade: <span>{element.cidade}</span></h2>
-              <h2>Estado: <span>{element.estado}</span></h2>
+              <h2>Descrição: <span>{element.description}</span></h2>
+              <h2>Rua: <span>{element.street}</span></h2>
+              <h2>Bairro: <span>{element.neighborhood}</span></h2>
+              <h2>Cidade: <span>{element.city}</span></h2>
+              <h2>Estado: <span>{element.uf}</span></h2>
               <h2>Cep: <span>{element.cep}</span></h2>
             </div>
           ))}
@@ -75,19 +80,20 @@ function Home() {
 
 
         <section className={styles.listBox}>
-          {restaurantes.map((element) => (
-            <div className={styles.restaurantes}>
-              <h1>{element.nome}</h1>
-              <h2>Site: <span>{element.site}</span></h2>
-              <h2>Descrição: <span>{element.descricao}</span></h2>
-              <h2>Rua: <span>{element.rua}</span></h2>
-              <h2>Bairro: <span>{element.bairro}</span></h2>
-              <h2>Cidade: <span>{element.cidade}</span></h2>
-              <h2>Estado: <span>{element.estado}</span></h2>
-              <h2>Cep: <span>{element.cep}</span></h2>
-              <button onClick={() => votar(element)} >Votar</button>
-            </div>
-          ))}
+          {
+            posts.map((element: any) => (
+              <div className={styles.restaurantes}>
+                <h1>{element.name}</h1>
+                <h2>Site: <span>{element.site}</span></h2>
+                <h2>Descrição: <span>{element.description}</span></h2>
+                <h2>Rua: <span>{element.street}</span></h2>
+                <h2>Bairro: <span>{element.neighborhood}</span></h2>
+                <h2>Cidade: <span>{element.city}</span></h2>
+                <h2>Estado: <span>{element.uf}</span></h2>
+                <h2>Cep: <span>{element.cep}</span></h2>
+                <button onClick={() => votar(element)} >Votar</button>
+              </div>
+            ))}
         </section>
         <section className={styles.postBox}>
           <div>
