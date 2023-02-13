@@ -71,7 +71,7 @@ function Home() {
   }, []);
 
   function votar(voto: any) {
-    alert("Você votou no restaurante: " + voto.nome);
+    alert("Você votou no restaurante: " + voto.name);
   }
 
   async function handleSubmit(event: React.FormEvent) {
