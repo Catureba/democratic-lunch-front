@@ -87,7 +87,7 @@ export default function SignUp() {
                 <p className={styles.errorMessage}>{errorMessage}</p>
               )}
             </div>
-          </div>
+          </div>                                
         </div>
       </div>
     </>

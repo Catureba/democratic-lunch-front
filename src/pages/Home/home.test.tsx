@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import Home from '.';
 import '@testing-library/jest-dom/extend-expect';
 import {BrowserRouter as Router} from 'react-router-dom';
@@ -7,40 +7,41 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 describe("Página Home", () =>{
 
-    test('Deve exibit o vencedor do dia', () => {
-    render(
-        <Router>
-            <Home />
-        </Router>,
-    );
-
-    const textoBoasVindas = screen.getByText(
-        'Vencedor do dia:'
-    );
-    expect(textoBoasVindas).toBeInTheDocument();
-    });
-
-    test('Deve exibir o formulário de cadastro para novo restaurante', () => {
+    test('Deve exibir o vencedor do dia',  async () => {
         render(
             <Router>
                 <Home />
             </Router>,
         );
-    
+
+    const textoBoasVindas = screen.getByText(
+        'Vencedor do dia:'
+    );
+    await expect(textoBoasVindas).toBeInTheDocument();
+    });
+
+    test('Deve exibir o formulário de cadastro para novo restaurante',  async () => {
+
+        render(
+             <Router>
+                  <Home />
+            </Router>,
+        );
+        
         const formularioNome = screen.getByPlaceholderText(
-            'Nome'
+            "Nome"
         );
 
         const formularioSite = screen.getByPlaceholderText(
-            'Site'
+            "Site"
         );
 
         const formularioDescricao = screen.getByPlaceholderText(
-            'Descrição'
+            "Descrição"
         );
 
         const formularioCEP = screen.getByPlaceholderText(
-            'CEP'
+            "CEP"
         );
 
         expect(formularioNome).toBeInTheDocument();
@@ -50,16 +51,23 @@ describe("Página Home", () =>{
     
     });
 
-    test('Deve exibir botão de cadastrar restaurante', () => {
-        render(
-            <Router>
-                <Home />
-            </Router>,
-        );
+    test('Deve exibir botão de cadastrar restaurante',  async () => {
+
+    
+        act(()=>{
+            render(
+                <Router>
+                    <Home />
+                </Router>,
+            );
+        })
+       
     
         const botao = screen.getByRole('button', {
             name: /cadastrar/i
-          })
-        expect(botao).toBeInTheDocument();
-        });
+          });
+        await expect(botao).toBeInTheDocument();
+    });
+
+    
 });

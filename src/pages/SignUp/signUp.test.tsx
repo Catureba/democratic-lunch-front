@@ -33,12 +33,19 @@ describe("Página de Cadastro", () =>{
         expect(textoEmail).toBeInTheDocument();
         expect(textoSenha).toBeInTheDocument();
         expect(textoSenhaNovamente).toBeInTheDocument();
-
+        
         });
-    test('Verifica se o botão está sendo exibido',()=>{
 
-    })
-    test('Verifica se função de enviar o forumalário ',()=>{
+    test('Verifica se o botão de finalizar cadastro está sendo exibido',()=>{
+        render(
+            <Router>
+                <SignUp />
+            </Router>,
+          );
+        const botao = screen.getByRole('button', {
+            name: /Finalizar cadastro/i
+          })
+        expect(botao).toBeInTheDocument();
 
     })
 
